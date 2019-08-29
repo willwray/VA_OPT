@@ -13,7 +13,6 @@ matrix:
       env: GCC_VERSION=8
         - CC=gcc-8
         - CXX=g++-8
-        - CXX_STANDARD=17
       addons:
         apt:
           sources:
@@ -62,9 +61,9 @@ install:
 script:
   - which $CXX
   - $CXX --version
-  - CXXFLAGS=-std=c++11 meson setup c++11
-  - CXXFLAGS=-std=c++17 meson setup c++17
-  - CXXFLAGS=-std=c++2a meson setup c++2a
+  - meson -Dcpp_std=c++11  c++11
+  - meson -Dcpp_std=c++17  c++17
+  - meson -Dcpp_std=c++2a  c++2a
   - ninja -C c++11 test
   - ninja -C c++17 test
   - ninja -C c++2a test

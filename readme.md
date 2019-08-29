@@ -36,6 +36,11 @@ Also at [boost.org](http://www.boost.org/LICENSE_1_0.txt) and accompanying file 
 
 </details>
 
+| Linux Travis| Windows Appveyor|
+| :---: | :---: |
+|gcc-9, clang-7|MSVC 19.21.27702.2|
+| [![Build Status](https://travis-ci.org/willwray/VA_OPT.svg?branch=master)](https://travis-ci.org/willwray/VA_OPT) | [![Build status](https://ci.appveyor.com/api/projects/status/oy5q387u5c9pt0rx?svg=true)](https://ci.appveyor.com/project/willwray/VA_OPT) |
+
 ----
 
 ### **`VA_OPT.hpp`**

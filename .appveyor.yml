@@ -49,7 +49,7 @@ build_script:
 test_script:
   - cmd: ninja -C c++11 test
   - cmd: ninja -C c++17 test
-  - cmd: ninja -C c++2a test
+  - cmd: ninja -C c++latest test
 
 only_commits:
   files:
