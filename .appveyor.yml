@@ -41,10 +41,10 @@ build_script:
   - cmd: echo Building on %arch% with %compiler%
   - cmd: meson --backend=ninja -Dcpp_std=c++11 c++11
   - cmd: meson --backend=ninja -Dcpp_std=c++17 c++17
-  - cmd: meson --backend=ninja -Dcpp_std=c++2a c++2a
+  - cmd: meson --backend=ninja -Dcpp_std=c++latest c++latest
   - cmd: ninja -C c++11
   - cmd: ninja -C c++17
-  - cmd: ninja -C c++2a
+  - cmd: ninja -C c++latest
 
 test_script:
   - cmd: ninja -C c++11 test
