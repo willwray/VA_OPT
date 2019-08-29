@@ -1,3 +1,15 @@
+#include "VA_OPT.hpp"
+
+/*
+   Tests for VA_OPT.hpp 'emptiness' macros.
+
+   IS_EMPTY test cases are mostly lifted from BOOST VMD.
+   Current tests are static_assert-able.
+   Test cases for preprocessor fail -> compile-fail
+   will require a test framework with test runner;
+   the USE_DOCTEST switch is a start.
+ */
+
 #if defined(USE_DOCTEST)
 
   #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
@@ -10,8 +22,6 @@
   int main() {}
 
 #endif
-
-#include "VA_OPT.hpp"
 
 #define DATA
 #define EMPTY()
@@ -50,10 +60,20 @@ CHECK(!IS_EMPTY(FUNC_GEN7));
 #define FUNC_GEN8(x,y) ()
 #define FUNC_GEN9(x,y) anything
 
-// Clang rejects with "too few arguments".
+// Clang correctly rejects with "too few arguments".
 // GCC accepts.
 // MSVC?
-CHECK(!IS_EMPTY(FUNC_GEN8));
-CHECK(!IS_EMPTY(FUNC_GEN9));
+//CHECK(!IS_EMPTY(FUNC_GEN8));
+//CHECK(!IS_EMPTY(FUNC_GEN9));
 
+}
+
+TEST_CASE("IFN IFE IFNE")
+{
+CHECK(!bool{IFN()(1)} );
+CHECK( bool{IFN(NEMPTY)(1)} );
+CHECK( bool{IFE()(1)} );
+CHECK(!bool{IFE(NEMPTY)(1)} );
+CHECK( bool{IFNE()(0,1}) );
+CHECK( bool{IFNE(NEMPTY)(1,0)} );
 }
