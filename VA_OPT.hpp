@@ -1,6 +1,6 @@
 /*
   VA_OPT.hpp
-  ===============
+  ==========
 
   Preprocessor utilities for testing emptiness of macro arguments
   and for conditional expansion based on the emptiness of ARGS.

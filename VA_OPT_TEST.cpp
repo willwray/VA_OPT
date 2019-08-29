@@ -77,3 +77,5 @@ CHECK(!bool{IFE(NEMPTY)(1)} );
 CHECK( bool{IFNE()(0,1}) );
 CHECK( bool{IFNE(NEMPTY)(1,0)} );
 }
+
+#include "VA_OPT_UNDEF.hpp"
