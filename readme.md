@@ -1,6 +1,6 @@
 # **`VA_OPT`**
 
-## C++ Preprocessor macro argument emptiness testing
+## Emptiness testing for C++ Preprocessor macro arguments
 
 <details><summary>Copyright &copy; 2019 Will Wray. Distributed under the Boost Software License, V1.0</summary>
 
@@ -48,9 +48,12 @@ Also at [boost.org](http://www.boost.org/LICENSE_1_0.txt) and accompanying file 
 C++ preprocessor utilities for testing emptiness of macro arguments  
 and for expansion conditional on the emptiness of ARGS.
 
+ 1. For portability
+ 2. For handy utils that wrap `__VA_OPT__`
+
 This is mostly a 'polyfill' library providing `__VA_OPT__`alike  functionality  
 where support is not detected (so either not present or not selected).  
-The utilities provided are also handy regardless of portability concerns.
+The utilities are also useful `__VA_OPT__` wrappers in their own right.
 
 <details>
 
@@ -111,13 +114,17 @@ are provided using a fallback method (with some failing edge cases).
 
 Current Sept 2019 `__VA_OPT__` support:
 
- * Clang `-std=c++2a` enables it  
+ * Clang 6 introduced it, enabled with `-std=c++2a`  
 (don't know how best to enable it with earlier `-std`)
- * GCC has it enabled without `-std=++2a`  
-but, if an earlier `-std` flag is supplied along with `-pedantic`  
+ * GCC 8 has partial support (no `#__VA_OPT__`)  
+it is enabled by default without `-std=++2a` but,  
+if an earlier `-std` flag is supplied along with `-pedantic`  
 then it warns "`__VA_OPT__` is not available until C++2a"  
 (don't know how to silence that without dropping `-pedantic`).
- * MSVC TBD
+ * MSVC's experimental preprocessor is required to compile VA_OPT;  
+use /experimental:preprocessor flag in vs2017 or vs2019.  
+There's no `__VA_OPT__` support yet but conformance is improving.  
+(I do not intend to support non-conforming preprocessors.)
 
 ## Credits
 
