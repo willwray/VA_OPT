@@ -42,9 +42,9 @@ build_script:
   - cmd: meson --backend=vs2019 --buildtype=release -Dcpp_args=/experimental:preprocessor -Dcpp_std=c++11 c++11
   - cmd: meson --backend=vs2019 --buildtype=release -Dcpp_args=/experimental:preprocessor -Dcpp_std=c++17 c++17
   #- cmd: meson --backend=vs2019 --buildtype=release -Dcpp_args=/experimental:preprocessor -Dcpp_std=c++latest c++latest
-  - cmd: msbuild c++11\test_VA_OPT@exe.vcxproj
-  - cmd: msbuild c++17\test_VA_OPT@exe.vcxproj
-  #- cmd: msbuild c++latest\test_VA_OPT@exe.vcxproj
+  - cmd: msbuild c++11\test_VA_OPT@exe.vcxproj /p:configuration=release
+  - cmd: msbuild c++17\test_VA_OPT@exe.vcxproj /p:configuration=release
+  #- cmd: msbuild c++latest\test_VA_OPT@exe.vcxproj /p:configuration=release
 
 test_script:
   #- cmd: ninja -C c++11 test
