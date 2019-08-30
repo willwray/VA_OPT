@@ -1,3 +1,12 @@
+//  Copyright (c) 2019 Will Wray https://keybase.io/willwray
+//
+//  Distributed under the Boost Software License, Version 1.0.
+//        http://www.boost.org/LICENSE_1_0.txt
+//
+//  Repo: https://github.com/willwray/enum_traits
+
+#pragma once
+
 /*
   VA_OPT.hpp
   ==========
