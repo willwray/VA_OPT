@@ -61,7 +61,7 @@
   -------
   Props to pre-pro pioneers, particularly Paul Mensonides.
   The 'emptiness' methods are adapted from BOOST_VMD_IS_EMPTY which,
-. in turn, depends on BOOST Preprocessor's BOOST_PP_IS_BEGIN_PARENS
+  in turn, depends on BOOST Preprocessor's BOOST_PP_IS_BEGIN_PARENS
   (adapted and exposed here as IBP 'Is Begin Parens'):
   www.boost.org/doc/libs/1_71_0/libs/vmd
   www.boost.org/doc/libs/1_71_0/libs/preprocessor
